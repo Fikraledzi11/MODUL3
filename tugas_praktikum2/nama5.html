@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Edit Nama</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style5.css">
+</head>
+
+<body>
+
+<div class="phone">
+    <div class="container">
+
+        <div class="header">
+             <div class="back" onclick="location.href='pusat akun4.html'">←</div>
+        </div>
+
+        <div class="title">Nama</div>
+        <input
+            type="text"
+            id="namaInput"
+            class="input-box"
+            placeholder="Nama"
+        >
+
+        <div class="spacer"></div>
+          <button class="save-btn" onclick="simpanNama()">simpan</button>
+
+</div>
+</div>
+
+<script>
+const input = document.getElementById("namaInput");
+
+input.value = localStorage.getItem("namaUser") || "";
+
+function simpanNama() {
+    const nama = input.value.trim();
+
+    if (nama === "") {
+        alert("Nama tidak boleh kosong");
+        return;
+    }
+
+    localStorage.setItem("namaUser", nama);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Edit Alamat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style5.css">
+</head>
+
+<body>
+
+<div class="phone">
+    <div class="container">
+
+        <div class="header">
+             <div class="back" onclick="location.href='pusat akun4.html'">←</div>
+        </div>
+
+        <div class="title">Alamat</div>
+
+        <input
+            type="text"
+            id="alamatInput"
+            class="input-box"
+            placeholder="Alamat"
+        >
+
+        <div class="spacer"></div>
+          <button class="save-btn" onclick="simpanalamat()">simpan</button>
+
+</div>
+</div>
+
+<script>
+const input = document.getElementById("alamatInput");
+input.value = localStorage.getItem("alamatUser") || "";
+
+function simpanalamat() {
+    const alamat = input.value.trim();
+
+    if (alamat === "") {
+        alert("alamat tidak boleh kosong");
+        return;
+    }
+
+    localStorage.setItem("alamatUser", alamat);
+    alert("alamat berhasil disimpan");
+    history.back();
+}
+localStorage.setItem("alamatUser", alamat);
+</script>
+
+</body>
+</html>
