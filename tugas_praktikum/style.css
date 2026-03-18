@@ -1,0 +1,104 @@
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.phone {
+    width: 320px;
+    height: 560px;
+    background: rgb(173, 197, 212);
+    border-radius: 28px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.account {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.box {
+    height: 90px;
+    border-radius: 16px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.box.big {
+    grid-column: span 2;
+    height: 100px;
+}
+
+.box i {
+    font-size: 22px;
+}
+
+.box:hover {
+    background: #abe2e8;
+    color: #fff;
+    transform: translateY(-4px);
+}
+
+.scanner {
+    width: 90px;
+    height: 90px;
+    background: #aae3e6;
+    color: white;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.scanner:hover {
+    transform: translateX(-50%) scale(1.08);
+}
+.menu-btn{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+.menu-btn:hover{
+    transform: scale(1.2);
+    opacity: 0.7;
+}
+.fa-user{
+    font-size: 24px;
+    color: black;
+}

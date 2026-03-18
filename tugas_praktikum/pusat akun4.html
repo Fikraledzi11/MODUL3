@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Pusat Akun</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style4.css">
+</style>
+</head>
+
+<body>
+
+<div class="phone">
+    <div class="card">
+
+        <!-- Header -->
+        <div class="header">
+            <div class="back" onclick="location.href='akun3.html'">←</div>
+        </div>
+
+        <!-- Avatar -->
+        <div class="profile-wrapper">
+    <img id="profileImg" src="profile.jpeg" class="profile-circle">
+    <input type="file" id="photoInput" accept="image/*" hidden>
+    </div>
+
+        <div class="user-data">
+    <p id="showNama"></p>
+    <p id="showAlamat"></p>
+    <p id="shownomorhp"></p>
+</div>
+
+        <div class="menu-box">
+            <button class="menu-btn">
+                <div class="back" onclick="location.href='nama5.html'">
+                <span>Nama</span>
+                </div>
+                 <span>›</span>
+            </button>
+
+             <button class="menu-btn">
+                <div class="back" onclick="location.href='alamat6.html'">
+                <span>Alamat</span>
+                </div>
+                 <span>›</span>
+            </button>
+
+
+           <button class="menu-btn">
+                <div class="back" onclick="location.href='nomor hp7.html'">
+                <span>Nomor hp</span>
+                </div>
+                 <span>›</span>
+            </button>
+
+        </div>
+
+    </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const nama = localStorage.getItem("namaUser");
+    const alamat = localStorage.getItem("alamatUser");
+    const hp = localStorage.getItem("nomorhpUser");
+
+    if (nama) {
+        document.getElementById("showNama").innerText = nama;
+    }
+
+    if (alamat) {
+        document.getElementById("showAlamat").innerText = alamat;
+    }
+
+    if (hp) {
+        document.getElementById("shownomorhp").innerText = hp;
+    }
+    
+
+});
+document.addEventListener("DOMContentLoaded", function () {
+
+    const profileImg = document.getElementById("profileImg");
+    const photoInput = document.getElementById("photoInput");
+    
+    const savedPhoto = localStorage.getItem("profilePhoto");
+    if (savedPhoto) {
+        profileImg.src = savedPhoto;
+    }
+
+    profileImg.addEventListener("click", () => {
+        photoInput.click();
+    });
+
+    photoInput.addEventListener("change", () => {
+        const file = photoInput.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            localStorage.setItem("profilePhoto", e.target.result);
+            profileImg.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    });
+
+});
+
+
+</script>
+
+</body>
+</html>

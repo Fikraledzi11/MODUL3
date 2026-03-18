@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Ubah Kata Sandi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style8.css">
+</head>
+
+<body>
+
+<div class="phone">
+    <div class="container">
+
+        <div class="header">
+            <div class="back" onclick="location.href='akun3.html'">←</div>
+        </div>
+
+        <div class="title">Ubah kata sandi</div>
+
+        <input type="password" id="lama" class="input-box" placeholder="Kata sandi saat ini">
+        <input type="password" id="baru" class="input-box" placeholder="Kata sandi baru">
+        <input type="password" id="ulang" class="input-box" placeholder="Tulis ulang kata sandi baru">
+
+        <div class="spacer"></div>
+
+
+        <button class="save-btn" onclick="ubahSandi()">Ubah kata sandi</button>
+
+    </div>
+</div>
+
+<script>
+function ubahSandi() {
+    const lama = document.getElementById("lama").value;
+    const baru = document.getElementById("baru").value;
+    const ulang = document.getElementById("ulang").value;
+
+    if (!lama || !baru || !ulang) {
+        alert("Semua kolom harus diisi");
+        return;
+    }
+
+    if (baru !== ulang) {
+        alert("Kata sandi baru tidak sama");
+        return;
+    }
+
+    alert("Kata sandi berhasil diubah");
+    history.back();
+}
+</script>
+
+</body>
+</html>
